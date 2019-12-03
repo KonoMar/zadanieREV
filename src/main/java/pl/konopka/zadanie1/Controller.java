@@ -27,6 +27,11 @@ public class Controller {
     boolean isLowerCaseCase(@PathVariable String string) {
         return StringUtils.isAllLowerCase(string);
     }
+
+    @GetMapping(value = "/{string}")
+    boolean hasWhiteSpace(@PathVariable String string) {
+        return StringUtils.isWhitespace(string);
+    }
     @GetMapping(value = "/{string}")
     boolean isSpecialCase(@PathVariable String string) {
         return StringUtils.isAlpha(string) && StringUtils.isNumeric(string) && StringUtils.isWhitespace(string);
