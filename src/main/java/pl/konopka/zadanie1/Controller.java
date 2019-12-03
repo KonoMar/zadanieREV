@@ -13,4 +13,23 @@ public class Controller {
         return StringUtils.reverse(string);
     }
 
+    @GetMapping(value = "/{string}")
+    boolean isMixedCase(@PathVariable String string) {
+        return StringUtils.isMixedCase(string);
+    }
+
+    @GetMapping(value = "/{string}")
+    boolean isUpperCase(@PathVariable String string) {
+        return StringUtils.isAllUpperCase(string);
+    }
+
+    @GetMapping(value = "/{string}")
+    boolean isLowerCaseCase(@PathVariable String string) {
+        return StringUtils.isAllLowerCase(string);
+    }
+    @GetMapping(value = "/{string}")
+    boolean isSpecialCase(@PathVariable String string) {
+        return StringUtils.isAlpha(string) && StringUtils.isNumeric(string) && StringUtils.isWhitespace(string);
+    }
 }
+
